@@ -42,10 +42,18 @@ ENV LD_LIBRARY_PATH ${HOME}/tools/htslib/lib
 
 WORKDIR ${HOME}/tools/
 
-RUN git clone https://github.com/andyrimmer/Platypus
-WORKDIR ${HOME}/tools/Platypus/
-RUN cp -r ${HOME}/tools/htslib/ ${HOME}/tools/Platypus/
-RUN make
+##RUN git clone https://github.com/andyrimmer/Platypus
+##WORKDIR ${HOME}/tools/Platypus/
+##RUN cp -r ${HOME}/tools/htslib/ ${HOME}/tools/Platypus/
+##RUN make
+# Get platypus here
+# http://www.well.ox.ac.uk/bioinformatics/Software/Platypus-latest.tgz
+
+ADD Platypus_0.8.1 ${HOME}/tools/
+WORKDIR ${HOME}/tools/Platypus_0.8.1
+./buildPlatypus.sh
+
+WORKDIR ${HOME}/tools/
 
 ADD apache-ant-1.9.7 ${HOME}/tools/
 
