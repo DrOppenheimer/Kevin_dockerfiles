@@ -50,10 +50,7 @@ WORKDIR ${HOME}/tools/
 # http://www.well.ox.ac.uk/bioinformatics/Software/Platypus-latest.tgz
 
 ADD Platypus_0.8.1 ${HOME}/tools
-WORKDIR ${HOME}/tools/Platypus_0.8.1
-RUN ./buildPlatypus.sh
-
-WORKDIR ${HOME}/tools/
+RUN ${HOME}/tools/Platypus_0.8.1/buildPlatypus.sh
 
 ADD apache-ant-1.9.7 ${HOME}/tools/
 
