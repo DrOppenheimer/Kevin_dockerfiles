@@ -49,9 +49,9 @@ WORKDIR ${HOME}/tools/
 # Get platypus here
 # http://www.well.ox.ac.uk/bioinformatics/Software/Platypus-latest.tgz
 
-ADD Platypus_0.8.1 ${HOME}/tools/
+ADD Platypus_0.8.1 ${HOME}/tools
 WORKDIR ${HOME}/tools/Platypus_0.8.1
-./buildPlatypus.sh
+RUN ./buildPlatypus.sh
 
 WORKDIR ${HOME}/tools/
 
