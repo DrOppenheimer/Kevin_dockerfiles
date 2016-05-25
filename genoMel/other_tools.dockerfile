@@ -25,9 +25,7 @@ RUN apt-get update && apt-get install -y --force-yes \
     python-setuptools \
     htslib-test \
     sudo \
-    git \
-
-    
+    git
 
 ENV PATH ${HOME}/tools:${HOME}/tools/snpEff/scripts:${HOME}/tools/snpEff/galaxy:${HOME}/tools/snpEff/galaxy/examples:${HOME}/tools/vcflib/bin:${HOME}/tools/apache-ant-1.9.7/bin:${HOME}/tools/htslib/bin:$PATH
 
