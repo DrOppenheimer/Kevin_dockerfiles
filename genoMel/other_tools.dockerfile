@@ -22,10 +22,12 @@ RUN apt-get update && apt-get install -y --force-yes \
     g++ \
     python-pip \
     python-dev \
+    python-setuptools \
     htslib-test \
     sudo \
     git \
-    python-setuptools
+
+    
 
 ENV PATH ${HOME}/tools:${HOME}/tools/snpEff/scripts:${HOME}/tools/snpEff/galaxy:${HOME}/tools/snpEff/galaxy/examples:${HOME}/tools/vcflib/bin:${HOME}/tools/apache-ant-1.9.7/bin:${HOME}/tools/htslib/bin:$PATH
 
@@ -51,9 +53,8 @@ WORKDIR ${HOME}/tools/
 # http://www.well.ox.ac.uk/bioinformatics/Software/Platypus-latest.tgz
 
 ADD Platypus_0.8.1 ${HOME}/tools/
-WORKDIR ${HOME}/tools/Platypus_0.8.1
+WORKDIR ${HOME}/tools/Platypus_0.8.1/
 RUN buildPlatypus.sh
-#RUN ${HOME}/tools/Platypus_0.8.1/buildPlatypus.sh
 
 WORKDIR ${HOME}/tools/
 
