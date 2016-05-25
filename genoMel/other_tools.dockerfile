@@ -53,10 +53,10 @@ WORKDIR ${HOME}/tools/
 # tar -xvzf Platypus_0.8.1.tgz
 
 ADD Platypus_0.8.1 /root/tools/
-WORKDIR /root/tools/Platypus_0.8.1/
-RUN ./buildPlatypus.sh
+#WORKDIR /root/tools/Platypus_0.8.1/
+RUN /root/tools/Platypus_0.8.1/buildPlatypus.sh
 
-WORKDIR ${HOME}/tools/
+#WORKDIR ${HOME}/tools/
 
 ADD apache-ant-1.9.7 ${HOME}/tools/
 
