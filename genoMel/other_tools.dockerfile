@@ -54,7 +54,7 @@ WORKDIR ${HOME}/tools/
 
 ADD Platypus_0.8.1 /root/tools/
 WORKDIR /root/tools/Platypus_0.8.1/
-RUN buildPlatypus.sh
+RUN ./buildPlatypus.sh
 
 WORKDIR ${HOME}/tools/
 
