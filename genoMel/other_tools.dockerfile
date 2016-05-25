@@ -43,6 +43,7 @@ ENV LD_LIBRARY_PATH ${HOME}/tools/htslib/lib
 
 WORKDIR ${HOME}/tools/
 
+# COULD NOT GET DOCKER INSTALLATION OF PLATYPUS TO WORK _ INSTALLED MANUALLY
 ##RUN git clone https://github.com/andyrimmer/Platypus
 ##WORKDIR ${HOME}/tools/Platypus/
 ##RUN cp -r ${HOME}/tools/htslib/ ${HOME}/tools/Platypus/
@@ -51,12 +52,11 @@ WORKDIR ${HOME}/tools/
 # http://www.well.ox.ac.uk/bioinformatics/Software/Platypus-latest.tgz
 # RUN wget http://www.well.ox.ac.uk/bioinformatics/Software/Platypus-latest.tgz
 # tar -xvzf Platypus_0.8.1.tgz
-
-ADD Platypus_0.8.1 /root/tools/
+###
+#ADD Platypus_0.8.1 /root/tools/
 #WORKDIR /root/tools/Platypus_0.8.1/
-RUN /root/tools/Platypus_0.8.1/buildPlatypus.sh
+#RUN /root/tools/Platypus_0.8.1/buildPlatypus.sh
 
-#WORKDIR ${HOME}/tools/
 
 ADD apache-ant-1.9.7 ${HOME}/tools/
 
