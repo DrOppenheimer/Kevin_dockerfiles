@@ -51,9 +51,11 @@ WORKDIR ${HOME}/tools/
 ##RUN make
 # Get platypus here
 # http://www.well.ox.ac.uk/bioinformatics/Software/Platypus-latest.tgz
+# RUN wget http://www.well.ox.ac.uk/bioinformatics/Software/Platypus-latest.tgz
+# tar -xvzf Platypus_0.8.1.tgz
 
-ADD Platypus_0.8.1 ${HOME}/tools/
-WORKDIR ${HOME}/tools/Platypus_0.8.1/
+ADD Platypus_0.8.1 /root/tools/
+WORKDIR /root/tools/Platypus_0.8.1/
 RUN buildPlatypus.sh
 
 WORKDIR ${HOME}/tools/
