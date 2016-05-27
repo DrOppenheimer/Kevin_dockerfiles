@@ -43,7 +43,6 @@ ENV C_INCLUDE_PATH ${HOME}/htslib/include
 ENV LIBRARY_PATH ${HOME}/htslib/lib 
 ENV LD_LIBRARY_PATH ${HOME}/htslib/lib
 
-
 # COULD NOT GET DOCKER INSTALLATION OF PLATYPUS TO WORK _ INSTALLED MANUALLY
 ##RUN git clone https://github.com/andyrimmer/Platypus
 ##WORKDIR ${HOME}/tools/Platypus/
@@ -57,10 +56,9 @@ ENV LD_LIBRARY_PATH ${HOME}/htslib/lib
 #ADD Platypus_0.8.1 /root/tools/
 #WORKDIR /root/tools/Platypus_0.8.1/
 #RUN /root/tools/Platypus_0.8.1/buildPlatypus.sh
+ADD Platypus-latest.tgz ${HOME}
 
 ADD apache-ant-1.9.7 ${HOME}
-
-ADD Platypus-latest.tgz ${HOME}
 
 RUN wget http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip
 RUN unzip snpEff_latest_core.zip
@@ -68,7 +66,7 @@ RUN rm snpEff_latest_core.zip
 
 RUN git clone --recursive https://github.com/vcflib/vcflib.git
 WORKDIR ${HOME}/vcflib/
-RUN make -f Makefile
+RUN make
 WORKDIR ${HOME}
 
 RUN git clone https://github.com/HuntsmanCancerInstitute/USeq
