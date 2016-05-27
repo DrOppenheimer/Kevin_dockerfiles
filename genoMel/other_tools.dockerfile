@@ -31,14 +31,14 @@ RUN apt-get update && apt-get install -y --force-yes \
 
 ENV PATH ${HOME}:${HOME}/snpEff/scripts:${HOME}/snpEff/galaxy:${HOME}/snpEff/galaxy/examples:${HOME}/vcflib/bin:${HOME}/apache-ant-1.9.7/bin:${HOME}/htslib/bin:$PATH
 
-WORKDIR ${HOME}/tools/
-
 RUN sudo -E pip install Cython
 
 RUN sudo -E wget https://github.com/samtools/htslib/archive/1.3.1.tar.gz; tar -zxf 1.3.1.tar.gz
 WORKDIR ${HOME}/htslib-1.3.1/
 RUN make
 RUN make prefix=${HOME}/htslib install
+WORKDIR ${HOME}
+
 ENV C_INCLUDE_PATH ${HOME}/htslib/include
 ENV LIBRARY_PATH ${HOME}/htslib/lib 
 ENV LD_LIBRARY_PATH ${HOME}/htslib/lib
