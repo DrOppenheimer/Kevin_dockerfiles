@@ -64,9 +64,10 @@ RUN wget http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip
 RUN unzip snpEff_latest_core.zip
 RUN rm snpEff_latest_core.zip
 
-#RUN git clone --recursive https://github.com/vcflib/vcflib.git
-#WORKDIR ${HOME}/vcflib/
-#RUN make
+RUN git clone --recursive https://github.com/vcflib/vcflib.git
+WORKDIR ${HOME}/vcflib/
+RUN make
+
 WORKDIR ${HOME}
 
 RUN git clone https://github.com/HuntsmanCancerInstitute/USeq
