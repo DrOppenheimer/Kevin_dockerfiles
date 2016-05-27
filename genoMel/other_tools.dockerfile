@@ -68,11 +68,11 @@ RUN rm snpEff_latest_core.zip
 
 RUN git clone --recursive https://github.com/vcflib/vcflib.git
 WORKDIR ${HOME}/vcflib/
-RUN sudo make -f Makefile
+RUN make -f Makefile
+WORKDIR ${HOME}
 
 RUN git clone https://github.com/HuntsmanCancerInstitute/USeq
 
-WORKDIR ${HOME}
 #docker build -f ./other_tools.dockerfile -t other_tools .
 
     
