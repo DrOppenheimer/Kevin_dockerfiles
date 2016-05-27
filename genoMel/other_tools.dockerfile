@@ -57,8 +57,9 @@ WORKDIR ${HOME}/tools/
 #WORKDIR /root/tools/Platypus_0.8.1/
 #RUN /root/tools/Platypus_0.8.1/buildPlatypus.sh
 
-
 ADD apache-ant-1.9.7 ${HOME}/tools/
+
+ADD Platypus-latest.tgz ${HOME}/tools/
 
 RUN wget http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip
 RUN unzip snpEff_latest_core.zip
@@ -73,5 +74,7 @@ WORKDIR ${HOME}/tools/
 RUN git clone https://github.com/HuntsmanCancerInstitute/USeq
 
 WORKDIR ${HOME}
+
+#docker build -f ./other_tools.dockerfile -t other_tools .
 
     
