@@ -68,7 +68,7 @@ RUN rm snpEff_latest_core.zip
 
 RUN git clone --recursive https://github.com/vcflib/vcflib.git
 WORKDIR ${HOME}/vcflib/
-RUN make -f ./Makefile
+RUN sudo make
 
 RUN git clone https://github.com/HuntsmanCancerInstitute/USeq
 
