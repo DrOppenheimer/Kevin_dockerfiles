@@ -67,11 +67,12 @@ RUN unzip snpEff_latest_core.zip
 RUN rm snpEff_latest_core.zip
 
 RUN git clone --recursive https://github.com/vcflib/vcflib.git
-WORKDIR ${HOME}/tools/vcflib/
+WORKDIR ${HOME}/vcflib/
 RUN make
 
 RUN git clone https://github.com/HuntsmanCancerInstitute/USeq
 
+WORKDIR ${HOME}
 #docker build -f ./other_tools.dockerfile -t other_tools .
 
     
