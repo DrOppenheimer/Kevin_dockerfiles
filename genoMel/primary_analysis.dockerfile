@@ -34,9 +34,9 @@ WORKDIR ${HOME}/tools/
 
 RUN wget https://github.com/broadinstitute/picard/releases/download/1.126/picard-tools-1.126.zip \
     && git clone https://github.com/broadinstitute/picard.git \
-    && mv ${HOME}/tools/picard/src ${HOME}/ \
+    && cp ${HOME}/tools/picard/src ${HOME}/ \
     && unzip picard-tools-1.126.zip \
-    && mv picard-tools-1.126 picard-tools \
+    && cp picard-tools-1.126 picard-tools \
     && rm *.zip
 
 ENV PATH ${HOME}/tools:/home/ubuntu/src/bcl2fastq:/home/ubuntu/.local/lib/python2.7/site-packages/matplotlib:$PATH
