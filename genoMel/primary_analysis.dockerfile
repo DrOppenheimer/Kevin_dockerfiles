@@ -12,9 +12,13 @@ RUN apt-get update && apt-get install -y --force-yes \
     unzip \
     libpng-dev \
     libfreetype6-dev \
-    python-numpy python-scipy \
-    python-matplotlib
-
+    python-numpy\
+    python-scipy \
+    python-matplotlib\
+    python-pandas\
+    python-sympy\
+    python-nose
+    
 USER ubuntu
 ENV HOME /home/ubuntu
 
@@ -35,6 +39,6 @@ RUN wget https://github.com/broadinstitute/picard/releases/download/1.126/picard
     && mv picard-tools-1.126 picard-tools \
     && rm *.zip
 
-ENV PATH ${HOME}/tools:$PATH
+ENV PATH ${HOME}/tools:/home/ubuntu/src/bcl2fastq:/home/ubuntu/.local/lib/python2.7/site-packages/matplotlib:$PATH
 
 WORKDIR ${HOME}
