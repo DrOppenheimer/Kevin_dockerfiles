@@ -33,7 +33,7 @@ ADD novocraft ${HOME}/tools
 WORKDIR ${HOME}/tools/
 
 RUN sudo -E wget https://github.com/broadinstitute/picard/releases/download/1.126/picard-tools-1.126.zip \
-    && git clone https://github.com/broadinstitute/picard.git \
+    && sudo -E git clone https://github.com/broadinstitute/picard.git \
     && cp ${HOME}/tools/picard/src ${HOME}/ \
     && unzip picard-tools-1.126.zip \
     && cp picard-tools-1.126 picard-tools \
