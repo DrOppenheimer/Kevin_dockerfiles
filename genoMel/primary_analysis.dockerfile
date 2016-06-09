@@ -1,7 +1,6 @@
 FROM ubuntu
 
 USER root
-ENV HOME /home/ubuntu
 ENV http_proxy http://cloud-proxy:3128
 ENV https_proxy http://cloud-proxy:3128
 RUN apt-get update && apt-get install -y --force-yes \
@@ -19,6 +18,9 @@ RUN apt-get update && apt-get install -y --force-yes \
     python-pandas\
     python-sympy\
     python-nose
+
+USER ubuntu
+ENV HOME /home/ubuntu
     
 RUN mkdir ${HOME}/tools
 
