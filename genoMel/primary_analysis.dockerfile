@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y --force-yes \
     
 RUN mkdir ${HOME}/tools
 
-RUN pip install -e git+https://github.com/brwnj/bcl2fastq.git@master#egg=bcl2fastq 
+RUN sudo -E pip install -e git+https://github.com/brwnj/bcl2fastq.git@master#egg=bcl2fastq 
 
 ADD Trimmomatic-0.36 ${HOME}/tools 
 
