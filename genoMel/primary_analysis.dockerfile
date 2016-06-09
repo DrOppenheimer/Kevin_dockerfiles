@@ -37,12 +37,12 @@ ADD Trimmomatic-0.36 ${HOME}/tools
 
 ADD novocraft ${HOME}/tools
 
-RUN sudo -E wget https://github.com/broadinstitute/picard/releases/download/1.126/picard-tools-1.126.zip \
-    && sudo -E git clone https://github.com/broadinstitute/picard.git \
-    && cp ${HOME}/tools/picard/src ${HOME}/ \
-    && unzip picard-tools-1.126.zip \
-    && cp picard-tools-1.126 picard-tools \
-    && rm *.zip
+#RUN sudo -E wget https://github.com/broadinstitute/picard/releases/download/1.126/picard-tools-1.126.zip \
+#    && sudo -E git clone https://github.com/broadinstitute/picard.git \
+#    && cp ${HOME}/tools/picard/src ${HOME}/ \
+#    && unzip picard-tools-1.126.zip \
+#    && cp picard-tools-1.126 picard-tools \
+#    && rm *.zip
 
 ENV PATH ${HOME}/tools:/home/ubuntu/src/bcl2fastq:/home/ubuntu/.local/lib/python2.7/site-packages/matplotlib:$PATH
 
