@@ -37,6 +37,7 @@ WORKDIR ${HOME}/tools/
 
 RUN sudo -E wget https://github.com/broadinstitute/picard/releases/download/1.126/picard-tools-1.126.zip \
     && sudo -E git clone https://github.com/broadinstitute/picard.git \
+    && mkdir -p ${HOME}/tools/picard/src
     && cp ${HOME}/tools/picard/src ${HOME}/ \
     && unzip picard-tools-1.126.zip \
     && cp picard-tools-1.126 picard-tools \
