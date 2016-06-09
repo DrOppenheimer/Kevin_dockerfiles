@@ -19,7 +19,8 @@ RUN apt-get update && apt-get install -y --force-yes \
     python-sympy\
     python-nose\
     python-pip\
-    sudo
+    sudo\
+    git
 
 #USER ubuntu
 #ENV HOME /home/ubuntu
