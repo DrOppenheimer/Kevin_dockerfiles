@@ -18,7 +18,8 @@ RUN apt-get update && apt-get install -y --force-yes \
     python-pandas\
     python-sympy\
     python-nose\
-    python-pip
+    python-pip\
+    sudo
 
 #USER ubuntu
 #ENV HOME /home/ubuntu
