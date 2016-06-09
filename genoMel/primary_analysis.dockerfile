@@ -17,7 +17,8 @@ RUN apt-get update && apt-get install -y --force-yes \
     python-matplotlib\
     python-pandas\
     python-sympy\
-    python-nose
+    python-nose\
+    python-pip
 
 #USER ubuntu
 #ENV HOME /home/ubuntu
