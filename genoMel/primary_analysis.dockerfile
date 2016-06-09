@@ -19,8 +19,8 @@ RUN apt-get update && apt-get install -y --force-yes \
     python-sympy\
     python-nose
 
-USER ubuntu
-ENV HOME /home/ubuntu
+#USER ubuntu
+#ENV HOME /home/ubuntu
     
 RUN mkdir ${HOME}/tools
 
